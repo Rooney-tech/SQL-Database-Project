@@ -1,6 +1,6 @@
-FROM ghcr.io/lovasoa/sqlpage:latest
+FROM lovasoa/sqlpage:latest
 
-WORKDIR /var/www
+WORKDIR /app
 
 COPY . .
 
