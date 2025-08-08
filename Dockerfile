@@ -1,5 +1,9 @@
 FROM ghcr.io/lovasoa/sqlpage:latest
-COPY . /app
-WORKDIR /app
+
+WORKDIR /var/www
+
+COPY . .
+
 EXPOSE 8080
-CMD [ "serve" ]
+
+CMD ["sqlpage"]
