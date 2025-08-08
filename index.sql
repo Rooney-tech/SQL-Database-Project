@@ -4,7 +4,7 @@ SELECT 'shell' AS component,
   'dark' AS theme,
   '' AS icon,
   JSON('[
-  { "title": "Home", "link": "index.sql", "icon": "home" },
+  { "title": "Home", "link": "/", "icon": "home" },
   { "title": "About", "link": "/about.sql", "icon": "info-square" },
   {
     "title": "Sales",
