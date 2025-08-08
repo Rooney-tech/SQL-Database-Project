@@ -6,7 +6,6 @@ SELECT 'shell' AS component,
   JSON('[
   { "title": "Home", "link": "index.sql", "icon": "home" },
   { "title": "About", "link": "/about.sql", "icon": "info-square" },
-  { "title": "Dashboard", "link": "combined_data.sql", "icon": "info-square" },
   {
     "title": "Sales",
     "icon": "section",
@@ -553,43 +552,37 @@ select
 select 
     'Customers'  as title,
     $customers       as value,
-    'green'   as color,
+    'teal'   as color,
     'shopping-cart' as icon,
     TRUE      as title_link_new_tab;
 
 select 
     'Transactions'          as title,
     $n_transactions          as value,
-    'red'            as color,
-    '#users'         as title_link,
-    FALSE            as title_link_new_tab,
-    '#users_details' as value_link,
-    TRUE             as value_link_new_tab;
+    'cyan'            as color;
 
 select 
     'Orders'  as title,
     $n_orders       as value,
-    'green'   as color,
+    'blue'   as color,
     'shopping-cart' as icon,
     TRUE      as title_link_new_tab;
 
   select 
     'QTD Revenue'  as title,
     'combine_data.sql' as value_link,
-    'green'   as color,
+    'purple'    as color,
     '$'||$QTD as value,
     'shopping-cart' as icon,
-    TRUE      as title_link_new_tab,
     ROUND($QoQ::numeric,0) as change_percent;
 
 
  select 
     'YTD Revenue'  as title,
     'combine_data.sql' as value_link,
-    'green'   as color,
+    'indigo'   as color,
     '$'||$YTD as value,
     'shopping-cart' as icon,
-    TRUE      as title_link_new_tab,
     ROUND($YoY::numeric,0) as change_percent;
 
 
@@ -599,12 +592,6 @@ SELECT 'card' as component,
 select 'viz_bar.sql?_sqlpage_embed' as embed;
 select 'viz_top10_products.sql?_sqlpage_embed' as embed;
 select 'viz_top_10_customers.sql?_sqlpage_embed' as embed;
-
-
-
-
-SELECT 'card' as component,
-3 as columns;
 
 select 'viz_pie.sql?_sqlpage_embed' as embed;
 select 'viz_bubble.sql?_sqlpage_embed' as embed;

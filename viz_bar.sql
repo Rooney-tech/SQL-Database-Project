@@ -62,7 +62,7 @@ SELECT 'shell' AS component,
 select 
     'chart'             as component,
     'Monthly Revenue(Thousands)' as title,
-    'bar'              as type,
+    'area'              as type,
     'cyan'           as color,
     'Revenue(Thousands $)' as ytitle,
     4               as width;
