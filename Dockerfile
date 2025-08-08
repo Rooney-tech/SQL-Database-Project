@@ -4,6 +4,8 @@ WORKDIR /app
 
 COPY . /app
 
+RUN echo "Listing /app contents:" && ls -l /app
+
 
 EXPOSE 8080
 
