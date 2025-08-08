@@ -2,7 +2,8 @@ FROM lovasoa/sqlpage:latest
 
 WORKDIR /app
 
-COPY . .
+COPY . /app
+
 
 EXPOSE 8080
 
