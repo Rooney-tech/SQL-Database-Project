@@ -1,7 +1,7 @@
 FROM lovasoa/sqlpage:latest
 
 # USER root
-WORKDIR /app
+# WORKDIR /app
 COPY . /app
 
 EXPOSE 8080
