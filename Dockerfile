@@ -1,4 +1,4 @@
-FROM Rooney-tech/sqlpage:latest
+FROM Rooney-tech/sqlpage
 
 WORKDIR /app
 
