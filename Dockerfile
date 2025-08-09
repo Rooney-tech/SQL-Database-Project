@@ -1,19 +1,26 @@
+# 🐳 Base image
 FROM lovasoa/sqlpage:latest
 
+# 👤 Optional: switch to root if needed for permissions
 # USER root
-# WORKDIR /app
-COPY . /app
 
+# 📁 Set working directory
+WORKDIR /var/www
+
+# 📦 Copy all project files into container
+COPY . /var/www/
+
+# 🌐 Expose SQLPage default port
 EXPOSE 8080
 
 # ✅ Build-time verification
-RUN echo "📁 Verifying /app contents:" && ls -l /app && \
-    echo "📄 index.sql preview:" && head -n 10 /app/index.sql || echo "❌ index.sql not found"
+RUN echo "📁 Verifying /var/www contents:" && ls -l /var/www && \
+    echo "📄 index.sql preview:" && head -n 10 /var/www/index.sql || echo "❌ index.sql not found"
 
-# ✅ Runtime diagnostics + launch
+# 🚀 Runtime diagnostics + SQLPage launch
 ENTRYPOINT ["/bin/sh", "-c", "\
-  echo '📁 Contents of /app:' && ls -l /app && \
-  if [ -f index.sql ]; then \
+  echo '📁 Contents of /var/www:' && ls -l /var/www && \
+  if [ -f /var/www/index.sql ]; then \
     echo '✅ index.sql found'; \
   else \
     echo '❌ index.sql missing'; \
