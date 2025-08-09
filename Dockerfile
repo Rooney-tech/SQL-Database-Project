@@ -4,10 +4,11 @@ WORKDIR /app
 
 COPY . /app
 
-# Optional: List contents for debugging
-RUN echo "📁 Contents of /app:" && ls -l /app
+# Make sure your binary is executable
+RUN chmod +x /app/sqlpage && \
+    echo "📁 Contents of /app:" && ls -l /app
 
 EXPOSE 8080
 
-# ✅ Check for index.sql before running sqlpage
-CMD ["/bin/sh", "-c", "if [ -f index.sql ]; then echo '✅ index.sql found'; else echo '❌ index.sql missing'; fi && sqlpage"]
+# ✅ Run your local binary instead of the global one
+CMD ["/bin/sh", "-c", "if [ -f index.sql ]; then echo '✅ index.sql found'; else echo '❌ index.sql missing'; fi && ./sqlpage"]
