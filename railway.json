@@ -1,5 +1,14 @@
-{"build":
-       {
-        "builder":"DOCKERFILE"
-       }
- }
+{
+  "build": {
+    "builder": "DOCKERFILE",
+    "dockerfilePath": "Dockerfile"
+  },
+  "deploy": {
+    "startCommand": "sqlpage",
+    "healthcheckPath": "/",
+    "healthcheckTimeout": 100
+  },
+  "env": {
+    "DATABASE_URL": "${DATABASE_URL}"
+  }
+}
