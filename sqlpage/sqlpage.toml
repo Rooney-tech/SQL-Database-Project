@@ -1,0 +1,2 @@
+[database]
+url = "postgres://avnadmin:AVNS_8rpNm2zZ2hK5zp_ov8o@pg-25309505-odagorooney6-1.f.aivencloud.com:25438/portfolio?sslmode=require"
