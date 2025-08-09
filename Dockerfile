@@ -1,6 +1,6 @@
 FROM lovasoa/sqlpage:latest
 
-WORKDIR /src
+WORKDIR /app
 
 COPY . /app
 
@@ -9,4 +9,4 @@ RUN echo "Listing /app contents:" && ls -l /app
 
 EXPOSE 8080
 
-CMD ["sqlpage"]
+CMD ["sqlpage", "index.sql"]
