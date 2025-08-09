@@ -1,6 +1,6 @@
 FROM lovasoa/sqlpage:latest
 
-USER root
+# USER root
 WORKDIR /app
 COPY . /app
 
