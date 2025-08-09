@@ -1,9 +1,6 @@
 # 🐳 Base image
 FROM lovasoa/sqlpage:latest
 
-# 👤 Optional: switch to root if needed for permissions
-# USER root
-
 # 📁 Set working directory
 WORKDIR /var/www
 
@@ -13,6 +10,9 @@ COPY . /var/www/
 # 🌐 Expose SQLPage default port
 EXPOSE 8080
 
+# 🔐 Set default PostgreSQL connection string
+ENV DATABASE_URL=postgres://avnadmin:AVNS_8rpNm2zZ2hK5zp_ov8o@pg-25309505-odagorooney6-1.f.aivencloud.com:25438/portfolio?sslmode=require
+
 # ✅ Build-time verification
 RUN echo "📁 Verifying /var/www contents:" && ls -l /var/www && \
     echo "📄 index.sql preview:" && head -n 10 /var/www/index.sql || echo "❌ index.sql not found"
@@ -20,6 +20,7 @@ RUN echo "📁 Verifying /var/www contents:" && ls -l /var/www && \
 # 🚀 Runtime diagnostics + SQLPage launch
 ENTRYPOINT ["/bin/sh", "-c", "\
   echo '📁 Contents of /var/www:' && ls -l /var/www && \
+  echo '🔐 DATABASE_URL:' && echo $DATABASE_URL && \
   if [ -f /var/www/index.sql ]; then \
     echo '✅ index.sql found'; \
   else \
