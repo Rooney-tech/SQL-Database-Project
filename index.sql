@@ -6,7 +6,6 @@ SELECT 'shell' AS component,
   JSON('[
   { "title": "Home", "link": "/", "icon": "home" },
   { "title": "About", "link": "/about.sql", "icon": "info-square" },
-  { "title": "DB", "link": "/db_info.sql", "icon": "info-square" },
   {
     "title": "Sales",
     "icon": "section",
