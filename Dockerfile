@@ -1,6 +1,6 @@
 FROM lovasoa/sqlpage:latest
 
-WORKDIR /app
+WORKDIR /SQL-Database-Project
 
 COPY . /app
 
