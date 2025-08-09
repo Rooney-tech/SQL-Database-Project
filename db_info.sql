@@ -2,11 +2,11 @@ SELECT 'shell' AS component,
   '👌SQL Project' AS title,
   TRUE AS fixed_top_menu,
   'dark' AS theme,
-  'golf' AS icon,
+  '' AS icon,
   JSON('[
-  { "title": "Home", "link": "index.sql", "icon": "home" },
+  { "title": "Home", "link": "/", "icon": "home" },
   { "title": "About", "link": "/about.sql", "icon": "info-square" },
-
+  { "title": "DB", "link": "/db_info.sql", "icon": "info-square" },
   {
     "title": "Sales",
     "icon": "section",
@@ -42,22 +42,24 @@ SELECT 'shell' AS component,
  { "title": "Raw Data", "link": "t_raw_data.sql", "icon": "section" }
 ]') AS menu_item,
      '' AS footer,
-      'Poppins'               as font,
+      'comic' as font,
      'en-US' as language,
       'Menu' as navbar_title,
       '' as search_value,
-      --30 as refresh,
+      86400 as refresh,
   TRUE AS sidebar;
-  
-TRUNCATE temp_customer;
 
 
-SELECT 'table' as component,
-   TRUE    as freeze_columns,
-   TRUE    as freeze_headers,
-   TRUE    as hover,
-   TRUE    as striped_rows,
-   TRUE    as sort,
-   TRUE    as search;
 
-   SELECT * FROM mv_transaction_summary;
+select '🔍 Database Connection Info' as title;
+
+select 'Connection Details' as section;
+
+select current_database() as "Database Name",
+       current_user as "Connected User",
+       inet_server_addr() as "Server IP",
+       inet_server_port() as "Server Port";
+
+select 'PostgreSQL Version' as section;
+
+select version() as "Version";
