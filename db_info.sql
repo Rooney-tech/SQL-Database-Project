@@ -51,15 +51,12 @@ SELECT 'shell' AS component,
 
 
 
-select '🔍 Database Connection Info' as title;
+select 'list' as component,
+'🔍 Database Connection Info' as title;
 
-select 'Connection Details' as section;
-
-select current_database() as "Database Name",
-       current_user as "Connected User",
-       inet_server_addr() as "Server IP",
-       inet_server_port() as "Server Port";
-
-select 'PostgreSQL Version' as section;
-
-select version() as "Version";
+SELECT
+       current_database() as title,
+       current_user as title,
+       inet_server_addr() as title,
+       inet_server_port() as title,
+       version() as title;
