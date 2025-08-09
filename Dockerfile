@@ -2,7 +2,8 @@ FROM lovasoa/sqlpage:latest
 
 WORKDIR /app
 
-COPY . /app
+COPY index.sql /app/index.sql
+
 
 RUN echo "Listing /app contents:" && ls -l /app
 
