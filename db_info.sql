@@ -55,7 +55,7 @@ select 'list' as component,
 '🔍 Database Connection Info' as title;
 
 SELECT
-       ersion() as title,
+       version() as title,
        current_database() as title,
        current_user as title,
        inet_server_addr() as title,
