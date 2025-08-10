@@ -49,15 +49,45 @@ SELECT 'shell' AS component,
       --30 as refresh,
   TRUE AS sidebar;
 
+
+
+select 
+    'hero'                 as component,
+    'About'              as title,
+    'This portfolio project showcases my ability to harness the full power of SQL to solve complex business data management challenges using PostgreSQL.
+Through hands-on experience with retail data systems at Transsion Holdings, I gained deep insight into the end-to-end flow of operational data—from inventory tracking and purchase records to sales analytics.
+This exposure provided a practical blueprint for applying SQL in real-world scenarios, enabling me to design efficient queries, normalize datasets, and optimize relational structures for clarity, performance, and decision-making throughout this project.
+' as description_md;
+
+select 
+    'Architect' as title,
+    'Rooney Odhiambo Odago' as description,
+    'user'  as icon,
+    'https://rooney-tech.github.io' as link,
+    'teal'  as color;
+
+select 
+    'Database Engine' as title,
+    'PostgresQL' as description,
+    'database'  as icon,
+    'blue'  as color;
+select 
+    'Database Host' as title,
+    'Aiven Cloud Services' as description,
+    'cloud'       as icon,
+    'indigo'     as color;
+
+
+
 select 
     'text' as component,
     --TRUE   as article,
     '50%' as width,
     '
 
-* The raw ''Order Sales'' data in this website was sourced from [Kaggle](https://www.kaggle.com/datasets/kyanyoga/sample-sales-data) and is set to undergo normalization using the PgAdmin RDBMS, powered by the PostgreSQL database engine.
 # Database Normalization.
   Def: This is the process of structuring a relational database in accordance with a series of so-called normal forms in order to reduce data redundancy and improve data integrity.
+* The raw "Order Sales.csv" dataset featured on this site was sourced from [Kaggle](https://www.kaggle.com/datasets/kyanyoga/sample-sales-data) and is currently undergoing normalization via PgAdmin, backed by the PostgreSQL database engine and hosted on Aiven’s managed cloud services.
  ## First Normal Form(1NF)
 * 1NF assumptions checked at this stage include:
     1. Atomicity: Each column must contain single, indivisible vaalues (no lists on grouped data).
