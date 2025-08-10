@@ -54,10 +54,11 @@ select
     --TRUE   as article,
     '50%' as width,
     '
+
+* The raw ''Order Sales'' data in this website was sourced from [Kaggle](https://www.kaggle.com/datasets/kyanyoga/sample-sales-data) and is set to undergo normalization using the PgAdmin RDBMS, powered by the PostgreSQL database engine.
 # Database Normalization.
   Def: This is the process of structuring a relational database in accordance with a series of so-called normal forms in order to reduce data redundancy and improve data integrity.
  ## First Normal Form(1NF)
-* The raw ''Order Sales'' data in this website was sourced from [Kaggle](https://www.kaggle.com/datasets/kyanyoga/sample-sales-data) and is set to undergo normalization using the PgAdmin RDBMS, powered by the PostgreSQL database engine.
 * 1NF assumptions checked at this stage include:
     1. Atomicity: Each column must contain single, indivisible vaalues (no lists on grouped data).
     2. Uniqueness: Every row should be uniquely identifiable with a primary key which is a combination of "Order Number"+"Order Line Number".
