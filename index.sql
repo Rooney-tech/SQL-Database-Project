@@ -425,7 +425,7 @@ AND($deal_size_d IS NULL OR "Deal Size" IN (SELECT json_array_elements_text($dea
 
 -- 1. TOP 10 PRODUCTS BEGIN
 DROP TABLE IF EXISTS top10products_viz;
-CREATE TABLE top10products_viz AS
+CREATE TEMP TABLE top10products_viz AS
 SELECT *
 FROM (
     SELECT
