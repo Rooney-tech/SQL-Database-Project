@@ -11,3 +11,4 @@ SELECT  order_n as series,
         p_code as label,
          qty as value
 FROM top10products_viz;
+
