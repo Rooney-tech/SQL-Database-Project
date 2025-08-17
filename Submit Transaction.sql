@@ -1,10 +1,11 @@
 --Update orders table.
-INSERT INTO "Orders" ("Order Number", "Order Status ID", "Order Date", "Customer ID")
+INSERT INTO "Orders" ("Order Number", "Order Status ID", "Order Date", "Customer ID","Update Date")
 SELECT DISTINCT ON ("Order Number") 
        "Order Number"::INT, 
        "Order Status"::INT, 
        NOW()::DATE, 
-       "Customer"
+       "Customer",
+       NOW()::DATE
 FROM temp_items
 WHERE "Message" = 'Successful';
 
