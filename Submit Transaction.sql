@@ -65,6 +65,15 @@ FROM (
   GROUP BY item, "Order Number", "Deal ID"
 ) AS aggregated;
 
+UPDATE "Transactions" t
+SET "Deal Size" = size_update.new_ds
+FROM (
+  SELECT trns."Deal ID", d."Deal Size" AS new_ds
+  FROM "Transactions" trns
+  JOIN "Deal Size" d
+    ON trns."Deal ID" = d."Deal ID"
+) AS size_update
+WHERE t."Deal ID" = size_update."Deal ID";
 --Update inventory accordingly.
 WITH sold AS (
   SELECT item, SUM("Quantity Ordered") AS total_qty
